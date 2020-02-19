@@ -58,17 +58,17 @@ class SpentTimeView: BaseView {
         let currentDate = Date()
         switch requiredComponent {
         case .day:
-            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0
+            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0)
         case .weekday:
-            return Int((NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0) / 7)
+            return abs(Int((NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0) / 7))
         case .month:
-            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).month ?? 0
+            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).month ?? 0)
         case .hour:
-            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).hour ?? 0
+            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).hour ?? 0)
         case.minute:
-            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).minute ?? 0
+            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).minute ?? 0)
         case .second:
-            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).second ?? 0
+            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).second ?? 0)
         default:
             return 0
         }

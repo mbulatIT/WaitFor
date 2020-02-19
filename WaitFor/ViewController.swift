@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         timeLeftView.title = "Осталось"
         timeSpentView.title = "Прошло"
-//        timeLeftView.date = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
+        timeLeftView.date = Calendar.current.date(byAdding: .day, value: 10, to: Date())!
         timeSpentView.date = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
         // Do any additional setup after loading the view.
     }
