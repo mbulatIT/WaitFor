@@ -26,73 +26,6 @@ class SpentTimeView: BaseView {
                 return 6
             }
         }
-
-        fileprivate func titleForCellAt(indexPath: IndexPath) -> String {
-            switch indexPath.row {
-            case 0:
-                switch self {
-                case .day:
-                    return "дня"
-                case .monthDay, .monthWeekDay:
-                    return "месяцев"
-                case .weekDay:
-                    return "недель"
-                }
-            case 1:
-                switch self {
-                case .day:
-                    return "часов"
-                case .monthDay:
-                    return "дней"
-                case .monthWeekDay:
-                    return "недель"
-                case .weekDay:
-                    return "дней"
-                }
-            case 2:
-                switch self {
-                case .day:
-                    return "минут"
-                case .monthDay:
-                    return "часов"
-                case .monthWeekDay:
-                    return "дней"
-                case .weekDay:
-                    return "часов"
-                }
-            case 3:
-                switch self {
-                case .day:
-                    return "секунд"
-                case .monthDay:
-                    return "минут"
-                case .monthWeekDay:
-                    return "часов"
-                case .weekDay:
-                    return "минут"
-                }
-            case 4:
-                switch self {
-                case .monthDay:
-                    return "секунд"
-                case .monthWeekDay:
-                    return "минут"
-                case .weekDay:
-                    return "секунд"
-                default:
-                    return ""
-                }
-            case 5:
-                switch self {
-                case .monthWeekDay:
-                    return "секунд"
-                default:
-                    return ""
-                }
-            default:
-                return ""
-            }
-        }
     }
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -120,6 +53,26 @@ class SpentTimeView: BaseView {
             }
         }
     }
+    
+    func calculateDate(_ components: Set<Calendar.Component>, requiredComponent: Calendar.Component) -> Int {
+        let currentDate = Date()
+        switch requiredComponent {
+        case .day:
+            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0
+        case .weekday:
+            return Int((NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0) / 7)
+        case .month:
+            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).month ?? 0
+        case .hour:
+            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).hour ?? 0
+        case.minute:
+            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).minute ?? 0
+        case .second:
+            return NSCalendar.current.dateComponents(components, from: date, to: currentDate).second ?? 0
+        default:
+            return 0
+        }
+    }
 
     override func setup() {
         UINib(nibName: "SpentTimeView", bundle: nil).instantiate(withOwner: self, options: nil)
@@ -128,6 +81,11 @@ class SpentTimeView: BaseView {
         tableView.delegate = self
         tableView.dataSource = self
         titleLabel.text = title
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -138,7 +96,74 @@ extension SpentTimeView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = displayType.titleForCellAt(indexPath: indexPath)
+        struct ComponentsSet {
+            static let Day: Set<Calendar.Component> = [.day, .hour, .minute, .second]
+            static let MonthDay: Set<Calendar.Component> = [.day, .month, .hour, .minute, .second]
+        }
+        switch indexPath.row {
+        case 0:
+            switch displayType {
+            case .day:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .day)) дня"
+            case .monthDay, .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .month)) месяцев"
+            case .weekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .weekday)) недель"
+            }
+        case 1:
+            switch displayType {
+            case .day:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .hour)) часов"
+            case .monthDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .day)) дней"
+            case .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .weekday)) недель"
+            case .weekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .day)) дней"
+            }
+        case 2:
+            switch displayType {
+            case .day:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .minute)) минут"
+            case .monthDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .day)) часов"
+            case .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .day)) дней"
+            case .weekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .day)) часов"
+            }
+        case 3:
+            switch displayType {
+            case .day:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .second)) секунд"
+            case .monthDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .minute)) минут"
+            case .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .hour)) часов"
+            case .weekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .minute)) минут"
+            }
+        case 4:
+            switch displayType {
+            case .monthDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .second)) секунд"
+            case .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .minute)) минут"
+            case .weekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.Day, requiredComponent: .second)) секунд"
+            default:
+                cell.textLabel?.text = ""
+            }
+        case 5:
+            switch displayType {
+            case .monthWeekDay:
+                cell.textLabel?.text = "\(calculateDate(ComponentsSet.MonthDay, requiredComponent: .second)) секунд"
+            default:
+                cell.textLabel?.text = ""
+            }
+        default:
+            cell.textLabel?.text = ""
+        }
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell
     }
