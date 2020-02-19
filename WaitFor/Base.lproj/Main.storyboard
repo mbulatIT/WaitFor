@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WaitFor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-sM-EtP">
+                                <rect key="frame" x="10" y="356" width="394" height="194"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hUN-ke-BKP" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="177" height="128"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="yPt-Ze-ae9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-C9-27d" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
+                                        <rect key="frame" x="197" y="20" width="177" height="128"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="6nG-J8-cyn"/>
+                                        </constraints>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vGv-nJ-ejT">
+                                        <rect key="frame" x="10" y="153" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="Д"/>
+                                            <segment title="МД"/>
+                                            <segment title="МНД"/>
+                                            <segment title="НД"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sC7-1G-XUF"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.27423525528169013" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vGv-nJ-ejT" secondAttribute="trailing" constant="10" id="0Km-Eh-Noz"/>
+                                    <constraint firstItem="vGv-nJ-ejT" firstAttribute="leading" secondItem="mSU-sM-EtP" secondAttribute="leading" constant="10" id="8px-bQ-SDu"/>
+                                    <constraint firstItem="Onf-C9-27d" firstAttribute="top" secondItem="mSU-sM-EtP" secondAttribute="top" constant="20" symbolic="YES" id="WNf-6h-LqM"/>
+                                    <constraint firstItem="Onf-C9-27d" firstAttribute="width" secondItem="hUN-ke-BKP" secondAttribute="width" id="XdI-td-e0W"/>
+                                    <constraint firstItem="hUN-ke-BKP" firstAttribute="leading" secondItem="mSU-sM-EtP" secondAttribute="leading" constant="20" symbolic="YES" id="dhZ-Id-9CB"/>
+                                    <constraint firstItem="hUN-ke-BKP" firstAttribute="top" secondItem="mSU-sM-EtP" secondAttribute="top" constant="20" symbolic="YES" id="g2f-l0-06j"/>
+                                    <constraint firstAttribute="trailing" secondItem="Onf-C9-27d" secondAttribute="trailing" constant="20" symbolic="YES" id="sXh-pp-kpe"/>
+                                    <constraint firstItem="vGv-nJ-ejT" firstAttribute="top" secondItem="Onf-C9-27d" secondAttribute="bottom" constant="5" id="wUr-YA-GLo"/>
+                                    <constraint firstAttribute="bottom" secondItem="vGv-nJ-ejT" secondAttribute="bottom" constant="10" id="yYW-zO-CkT"/>
+                                    <constraint firstItem="Onf-C9-27d" firstAttribute="leading" secondItem="hUN-ke-BKP" secondAttribute="trailing" id="z1s-MW-Sj2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.061466601668696608" green="0.065546934691126588" blue="0.16584358808290156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mSU-sM-EtP" secondAttribute="trailing" constant="10" id="ASO-9E-MaB"/>
+                            <constraint firstItem="mSU-sM-EtP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="riV-Ve-prV"/>
+                            <constraint firstItem="mSU-sM-EtP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rqA-Il-46i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="vGv-nJ-ejT" id="baB-Vm-d5x"/>
+                        <outlet property="timeLeftView" destination="hUN-ke-BKP" id="CIb-d0-5Cu"/>
+                        <outlet property="timeSpentView" destination="Onf-C9-27d" id="6JL-ux-SmG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+</document>
