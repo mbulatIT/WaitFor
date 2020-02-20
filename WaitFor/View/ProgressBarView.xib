@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressBarView" customModule="WaitFor" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="wjO-lN-R6C" id="cF3-Oe-zpB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="513" height="148"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wjO-lN-R6C">
+                    <rect key="frame" x="0.0" y="0.0" width="513" height="148"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wjO-lN-R6C" secondAttribute="bottom" id="Hdz-37-Zyy"/>
+                <constraint firstItem="wjO-lN-R6C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="joa-t7-vsW"/>
+                <constraint firstAttribute="trailing" secondItem="wjO-lN-R6C" secondAttribute="trailing" id="tEO-GI-XPH"/>
+                <constraint firstItem="wjO-lN-R6C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yZg-Eh-OOZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="203.62318840579712" y="207.58928571428569"/>
+        </view>
+    </objects>
+</document>

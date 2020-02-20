@@ -17,6 +17,8 @@
 		95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CE523FD3A4F00407E3C /* SpentTimeView.swift */; };
 		95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95814CE823FD3FBE00407E3C /* SpentTimeView.xib */; };
 		95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F47BC623FD4240000744D3 /* UIView+Nib.swift */; };
+		DF31AEEA23FE50FD000F3272 /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */; };
+		DF31AEEB23FE50FD000F3272 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		95814CE523FD3A4F00407E3C /* SpentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpentTimeView.swift; sourceTree = "<group>"; };
 		95814CE823FD3FBE00407E3C /* SpentTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpentTimeView.xib; sourceTree = "<group>"; };
 		95F47BC623FD4240000744D3 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
+		DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		95814CE723FD3A5300407E3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */,
+				DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */,
 				95814CE523FD3A4F00407E3C /* SpentTimeView.swift */,
 				952D4C6923FD45B6004D4070 /* BaseView.swift */,
 				952D4C6B23FD6A6C004D4070 /* TableViewWithoutScroll.swift */,
@@ -156,6 +162,7 @@
 				95814CDC23FD33ED00407E3C /* LaunchScreen.storyboard in Resources */,
 				95814CD923FD33ED00407E3C /* Assets.xcassets in Resources */,
 				95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */,
+				DF31AEEA23FE50FD000F3272 /* ProgressBarView.xib in Resources */,
 				95814CD723FD33EA00407E3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +180,7 @@
 				952D4C6A23FD45B6004D4070 /* BaseView.swift in Sources */,
 				95814CD023FD33EA00407E3C /* AppDelegate.swift in Sources */,
 				95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */,
+				DF31AEEB23FE50FD000F3272 /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
