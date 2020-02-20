@@ -16,36 +16,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-sM-EtP">
-                                <rect key="frame" x="10" y="356" width="394" height="194"/>
+                                <rect key="frame" x="10" y="353.5" width="394" height="199"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hUN-ke-BKP" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="177" height="128"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="yPt-Ze-ae9"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Onf-C9-27d" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
                                         <rect key="frame" x="197" y="20" width="177" height="128"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="6nG-J8-cyn"/>
                                         </constraints>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vGv-nJ-ejT">
-                                        <rect key="frame" x="10" y="153" width="374" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vGv-nJ-ejT">
+                                        <rect key="frame" x="10" y="158" width="374" height="32"/>
                                         <segments>
                                             <segment title="Д"/>
                                             <segment title="МД"/>
                                             <segment title="МНД"/>
                                             <segment title="НД"/>
                                         </segments>
+                                        <color key="selectedSegmentTintColor" red="0.35035111206950498" green="0.34229987364408243" blue="1" alpha="0.58291153169014087" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="onSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sC7-1G-XUF"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.27423525528169013" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.43752023963730569" green="0.43752023963730569" blue="0.43752023963730569" alpha="0.10117737676056338" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vGv-nJ-ejT" secondAttribute="trailing" constant="10" id="0Km-Eh-Noz"/>
                                     <constraint firstItem="vGv-nJ-ejT" firstAttribute="leading" secondItem="mSU-sM-EtP" secondAttribute="leading" constant="10" id="8px-bQ-SDu"/>
@@ -54,7 +55,7 @@
                                     <constraint firstItem="hUN-ke-BKP" firstAttribute="leading" secondItem="mSU-sM-EtP" secondAttribute="leading" constant="20" symbolic="YES" id="dhZ-Id-9CB"/>
                                     <constraint firstItem="hUN-ke-BKP" firstAttribute="top" secondItem="mSU-sM-EtP" secondAttribute="top" constant="20" symbolic="YES" id="g2f-l0-06j"/>
                                     <constraint firstAttribute="trailing" secondItem="Onf-C9-27d" secondAttribute="trailing" constant="20" symbolic="YES" id="sXh-pp-kpe"/>
-                                    <constraint firstItem="vGv-nJ-ejT" firstAttribute="top" secondItem="Onf-C9-27d" secondAttribute="bottom" constant="5" id="wUr-YA-GLo"/>
+                                    <constraint firstItem="vGv-nJ-ejT" firstAttribute="top" secondItem="Onf-C9-27d" secondAttribute="bottom" constant="10" id="wUr-YA-GLo"/>
                                     <constraint firstAttribute="bottom" secondItem="vGv-nJ-ejT" secondAttribute="bottom" constant="10" id="yYW-zO-CkT"/>
                                     <constraint firstItem="Onf-C9-27d" firstAttribute="leading" secondItem="hUN-ke-BKP" secondAttribute="trailing" id="z1s-MW-Sj2"/>
                                 </constraints>
@@ -65,16 +66,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TA-Gh-hov" customClass="ProgressBarView" customModule="WaitFor" customModuleProvider="target">
+                                <rect key="frame" x="10" y="64" width="394" height="88"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="KXq-Zo-BI3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.061466601668696608" green="0.065546934691126588" blue="0.16584358808290156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mSU-sM-EtP" secondAttribute="trailing" constant="10" id="ASO-9E-MaB"/>
-                            <constraint firstItem="mSU-sM-EtP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="riV-Ve-prV"/>
+                            <constraint firstItem="mSU-sM-EtP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2TA-Gh-hov" secondAttribute="bottom" constant="20" id="LtJ-20-aFK"/>
+                            <constraint firstItem="2TA-Gh-hov" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bdo-cW-w9W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2TA-Gh-hov" secondAttribute="trailing" constant="10" id="i65-tC-OhO"/>
+                            <constraint firstItem="mSU-sM-EtP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" priority="999" id="riV-Ve-prV"/>
                             <constraint firstItem="mSU-sM-EtP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rqA-Il-46i"/>
+                            <constraint firstItem="2TA-Gh-hov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vds-Kk-7KL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="2TA-Gh-hov" id="aCD-v4-iBe"/>
                         <outlet property="segmentedControl" destination="vGv-nJ-ejT" id="baB-Vm-d5x"/>
                         <outlet property="timeLeftView" destination="hUN-ke-BKP" id="CIb-d0-5Cu"/>
                         <outlet property="timeSpentView" destination="Onf-C9-27d" id="6JL-ux-SmG"/>

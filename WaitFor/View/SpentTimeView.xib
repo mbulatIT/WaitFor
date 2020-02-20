@@ -19,16 +19,16 @@
             <subviews>
                 <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="999" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-rj-hcn" customClass="TableViewWithoutScroll" customModule="WaitFor" customModuleProvider="target">
                     <rect key="frame" x="8" y="37" width="354" height="142"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="998" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xu-Uz-g99">
-                    <rect key="frame" x="8" y="8" width="354" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xu-Uz-g99">
+                    <rect key="frame" x="24" y="8" width="338" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2Xu-Uz-g99" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AS4-Qn-wQO"/>
                 <constraint firstItem="7gB-rj-hcn" firstAttribute="top" secondItem="2Xu-Uz-g99" secondAttribute="bottom" constant="8" id="Ir2-LJ-k0I"/>
@@ -36,7 +36,7 @@
                 <constraint firstAttribute="bottom" secondItem="7gB-rj-hcn" secondAttribute="bottom" constant="8" id="Toc-fA-h0J"/>
                 <constraint firstAttribute="trailing" secondItem="2Xu-Uz-g99" secondAttribute="trailing" constant="8" id="iN0-hK-RUf"/>
                 <constraint firstItem="7gB-rj-hcn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="t7M-UN-SBa"/>
-                <constraint firstItem="2Xu-Uz-g99" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="vEv-hl-Ibd"/>
+                <constraint firstItem="2Xu-Uz-g99" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="vEv-hl-Ibd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-26.086956521739133" y="402.12053571428572"/>

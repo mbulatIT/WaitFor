@@ -8,39 +8,58 @@
 
 import UIKit
 
-class ProgressBarView: UIView {
+class ProgressBarView: BaseView {
     
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet weak var progressLabel: UILabel!
     private var strokes = [UIView]()
-    var strokesCount: Int = 10 {
+    var strokesCount: Int = 30 {
         didSet {
             updateBar()
         }
     }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        fromNib()
+    
+    private var progress = 0.0
+    
+    override func setup() {
+        UINib(nibName: "ProgressBarView", bundle: nil).instantiate(withOwner: self, options: nil)
+        addSubview(view)
+        clipViewToBounds(view: view)
         updateBar()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fromNib()
-        updateBar()
+    func setProgress(_ value: Double) {
+        let progressOldValue = progress
+        if value > 1 {
+            progress = 1
+        } else if value < 0 {
+            progress = 0
+        } else {
+            progress = value
+        }
+        DispatchQueue.main.async {
+            self.progressLabel.text = "\((value * 100).rounded(toPlaces: 6)) %"
+        }
+        if Int(progressOldValue * Double(strokesCount)) != Int(progress * Double(strokesCount)) {
+            DispatchQueue.main.async {
+                self.updateBar()                
+            }
+        }
     }
 
     func updateBar() {
-        strokes.forEach({$0.removeFromSuperview()})
-        let strokeWidth = self.frame.width / 1.5 / CGFloat(strokesCount)
+        strokes.forEach({stackView.removeArrangedSubview($0)})
         stackView.spacing = self.frame.width / 2 / CGFloat(strokesCount)
-        let size = CGSize(width: strokeWidth, height: self.frame.height)
-        for _ in 0...strokesCount {
-            let view = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
-            view.backgroundColor = .white
-            view.layer.cornerRadius = 5
+        for iterator in 0...strokesCount {
+            let view = UIView()
+            view.backgroundColor = Double(iterator) < Double(strokesCount) * progress ? .white : .clear
+            view.layer.borderColor = UIColor.white.cgColor
+            view.layer.borderWidth = 1
+            view.layer.cornerRadius = 3
             view.layer.masksToBounds = true
             stackView.addArrangedSubview(view)
+            strokes.append(view)
         }
     }
 }

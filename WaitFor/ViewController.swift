@@ -13,12 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeLeftView: SpentTimeView!
     @IBOutlet weak var timeSpentView: SpentTimeView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var progressBar: ProgressBarView!
+    
+    let event = EventManager.shared.getEvent()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLeftView.title = "Осталось"
         timeSpentView.title = "Прошло"
-        timeLeftView.date = Calendar.current.date(byAdding: .day, value: 10, to: Date())!
-        timeSpentView.date = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
+        timeLeftView.date = event.endDate
+        timeSpentView.date = event.startDate
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+            self.progressBar.setProgress(self.calculateProgress())
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +48,11 @@ class ViewController: UIViewController {
         default:
             return
         }
+    }
+    
+    private func calculateProgress() -> Double {
+        let eventProgress = Calendar.current.dateComponents([.second], from: event.startDate, to: Date()).second ?? 0
+        return Double(eventProgress) / Double(event.durationInSeconds())
     }
     
 }
