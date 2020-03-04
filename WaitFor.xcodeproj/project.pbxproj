@@ -14,15 +14,29 @@
 		952D4C7123FE6E84004D4070 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952D4C7023FE6E84004D4070 /* EventManager.swift */; };
 		952D4C7323FE6F33004D4070 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952D4C7223FE6F33004D4070 /* Event.swift */; };
 		95814CD023FD33EA00407E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CCF23FD33EA00407E3C /* AppDelegate.swift */; };
-		95814CD423FD33EA00407E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CD323FD33EA00407E3C /* ViewController.swift */; };
-		95814CD723FD33EA00407E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95814CD523FD33EA00407E3C /* Main.storyboard */; };
+		95814CD423FD33EA00407E3C /* ActiveEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CD323FD33EA00407E3C /* ActiveEventViewController.swift */; };
 		95814CD923FD33ED00407E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95814CD823FD33ED00407E3C /* Assets.xcassets */; };
 		95814CDC23FD33ED00407E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95814CDA23FD33ED00407E3C /* LaunchScreen.storyboard */; };
 		95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CE523FD3A4F00407E3C /* SpentTimeView.swift */; };
 		95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95814CE823FD3FBE00407E3C /* SpentTimeView.xib */; };
 		95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F47BC623FD4240000744D3 /* UIView+Nib.swift */; };
+		DF00432D2402E115006D54AB /* LabelWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00432C2402E115006D54AB /* LabelWithInset.swift */; };
+		DF00432F2402E5E2006D54AB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00432E2402E5E2006D54AB /* NewEventViewController.swift */; };
+		DF0043312402E946006D54AB /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0043302402E946006D54AB /* UIColor+hex.swift */; };
 		DF31AEEA23FE50FD000F3272 /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */; };
 		DF31AEEB23FE50FD000F3272 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */; };
+		DF31AEED2401B8E6000F3272 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31AEEC2401B8E6000F3272 /* Appearance.swift */; };
+		DF31AEEF2401BE2F000F3272 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31AEEE2401BE2F000F3272 /* EventsViewController.swift */; };
+		DF9B2014240BFA5C007E7A60 /* ScrollContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2013240BFA5C007E7A60 /* ScrollContentViewController.swift */; };
+		DF9B2016240BFAB6007E7A60 /* TappableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2015240BFAB6007E7A60 /* TappableScrollView.swift */; };
+		DF9B2020240BFC98007E7A60 /* ActiveEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B201F240BFC98007E7A60 /* ActiveEventViewController.storyboard */; };
+		DF9B2022240BFDD3007E7A60 /* EventsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2021240BFDD3007E7A60 /* EventsViewController.storyboard */; };
+		DF9B2024240BFE1B007E7A60 /* NewEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2023240BFE1B007E7A60 /* NewEventViewController.storyboard */; };
+		DF9B2026240BFF07007E7A60 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2025240BFF07007E7A60 /* ViewControllerFactory.swift */; };
+		DF9B2028240BFFA5007E7A60 /* UIViewController+StoryboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2027240BFFA5007E7A60 /* UIViewController+StoryboardInstance.swift */; };
+		DF9B202B240C0202007E7A60 /* TabbarViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B202A240C0202007E7A60 /* TabbarViewControllerProtocol.swift */; };
+		DF9B202D240C1070007E7A60 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B202C240C1070007E7A60 /* UIColor+AppColors.swift */; };
+		DF9B202F240EF2B4007E7A60 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B202E240EF2B4007E7A60 /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,16 +48,30 @@
 		952D4C7223FE6F33004D4070 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		95814CCC23FD33EA00407E3C /* WaitFor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaitFor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95814CCF23FD33EA00407E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95814CD323FD33EA00407E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95814CD623FD33EA00407E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95814CD323FD33EA00407E3C /* ActiveEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEventViewController.swift; sourceTree = "<group>"; };
 		95814CD823FD33ED00407E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95814CDB23FD33ED00407E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95814CDD23FD33ED00407E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95814CE523FD3A4F00407E3C /* SpentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpentTimeView.swift; sourceTree = "<group>"; };
 		95814CE823FD3FBE00407E3C /* SpentTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpentTimeView.xib; sourceTree = "<group>"; };
 		95F47BC623FD4240000744D3 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		DF00432C2402E115006D54AB /* LabelWithInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithInset.swift; sourceTree = "<group>"; };
+		DF00432E2402E5E2006D54AB /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		DF0043302402E946006D54AB /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
 		DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		DF31AEEC2401B8E6000F3272 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		DF31AEEE2401BE2F000F3272 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		DF9B2013240BFA5C007E7A60 /* ScrollContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentViewController.swift; sourceTree = "<group>"; };
+		DF9B2015240BFAB6007E7A60 /* TappableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableScrollView.swift; sourceTree = "<group>"; };
+		DF9B201F240BFC98007E7A60 /* ActiveEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveEventViewController.storyboard; sourceTree = "<group>"; };
+		DF9B2021240BFDD3007E7A60 /* EventsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsViewController.storyboard; sourceTree = "<group>"; };
+		DF9B2023240BFE1B007E7A60 /* NewEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEventViewController.storyboard; sourceTree = "<group>"; };
+		DF9B2025240BFF07007E7A60 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		DF9B2027240BFFA5007E7A60 /* UIViewController+StoryboardInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstance.swift"; sourceTree = "<group>"; };
+		DF9B202A240C0202007E7A60 /* TabbarViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewControllerProtocol.swift; sourceTree = "<group>"; };
+		DF9B202C240C1070007E7A60 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		DF9B202E240EF2B4007E7A60 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +120,12 @@
 		95814CCE23FD33EA00407E3C /* WaitFor */ = {
 			isa = PBXGroup;
 			children = (
-				95814CCF23FD33EA00407E3C /* AppDelegate.swift */,
 				952D4C7423FE6F36004D4070 /* Model */,
 				952D4C6F23FE6E6C004D4070 /* Manager */,
-				95814CD323FD33EA00407E3C /* ViewController.swift */,
+				DF9B201B240BFB9B007E7A60 /* Scenes */,
+				DF9B2018240BFAEF007E7A60 /* CustomElements */,
 				95F47BC823FD4246000744D3 /* Extensions */,
-				95814CE723FD3A5300407E3C /* View */,
-				95814CD523FD33EA00407E3C /* Main.storyboard */,
+				DF9B2029240BFFE8007E7A60 /* SupportingFiles */,
 				95814CD823FD33ED00407E3C /* Assets.xcassets */,
 				95814CDA23FD33ED00407E3C /* LaunchScreen.storyboard */,
 				95814CDD23FD33ED00407E3C /* Info.plist */,
@@ -106,27 +133,98 @@
 			path = WaitFor;
 			sourceTree = "<group>";
 		};
-		95814CE723FD3A5300407E3C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */,
-				DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */,
-				952D4C6923FD45B6004D4070 /* BaseView.swift */,
-				952D4C6B23FD6A6C004D4070 /* TableViewWithoutScroll.swift */,
-				95814CE823FD3FBE00407E3C /* SpentTimeView.xib */,
-				95814CE523FD3A4F00407E3C /* SpentTimeView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		95F47BC823FD4246000744D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				952D4C6D23FE5DBF004D4070 /* UIView+XIB.swift */,
 				95F47BC623FD4240000744D3 /* UIView+Nib.swift */,
+				DF0043302402E946006D54AB /* UIColor+hex.swift */,
+				DF9B202C240C1070007E7A60 /* UIColor+AppColors.swift */,
 				9521C2FC23FE794F00C92B4B /* Double+Round.swift */,
+				DF9B2027240BFFA5007E7A60 /* UIViewController+StoryboardInstance.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DF9B2018240BFAEF007E7A60 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B201A240BFB63007E7A60 /* ViewControllers */,
+				DF9B2019240BFB1F007E7A60 /* View */,
+				DF9B202A240C0202007E7A60 /* TabbarViewControllerProtocol.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		DF9B2019240BFB1F007E7A60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF31AEE923FE50FD000F3272 /* ProgressBarView.swift */,
+				DF31AEE823FE50FD000F3272 /* ProgressBarView.xib */,
+				952D4C6923FD45B6004D4070 /* BaseView.swift */,
+				DF00432C2402E115006D54AB /* LabelWithInset.swift */,
+				952D4C6B23FD6A6C004D4070 /* TableViewWithoutScroll.swift */,
+				95814CE823FD3FBE00407E3C /* SpentTimeView.xib */,
+				95814CE523FD3A4F00407E3C /* SpentTimeView.swift */,
+				DF9B2015240BFAB6007E7A60 /* TappableScrollView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF9B201A240BFB63007E7A60 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B2013240BFA5C007E7A60 /* ScrollContentViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DF9B201B240BFB9B007E7A60 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B201E240BFBF9007E7A60 /* ActiveEvent */,
+				DF9B201D240BFBCF007E7A60 /* EventsList */,
+				DF9B201C240BFBB6007E7A60 /* NewEvent */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DF9B201C240BFBB6007E7A60 /* NewEvent */ = {
+			isa = PBXGroup;
+			children = (
+				DF00432E2402E5E2006D54AB /* NewEventViewController.swift */,
+				DF9B2023240BFE1B007E7A60 /* NewEventViewController.storyboard */,
+			);
+			path = NewEvent;
+			sourceTree = "<group>";
+		};
+		DF9B201D240BFBCF007E7A60 /* EventsList */ = {
+			isa = PBXGroup;
+			children = (
+				DF31AEEE2401BE2F000F3272 /* EventsViewController.swift */,
+				DF9B202E240EF2B4007E7A60 /* EventTableViewCell.swift */,
+				DF9B2021240BFDD3007E7A60 /* EventsViewController.storyboard */,
+			);
+			path = EventsList;
+			sourceTree = "<group>";
+		};
+		DF9B201E240BFBF9007E7A60 /* ActiveEvent */ = {
+			isa = PBXGroup;
+			children = (
+				95814CD323FD33EA00407E3C /* ActiveEventViewController.swift */,
+				DF9B201F240BFC98007E7A60 /* ActiveEventViewController.storyboard */,
+			);
+			path = ActiveEvent;
+			sourceTree = "<group>";
+		};
+		DF9B2029240BFFE8007E7A60 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B2025240BFF07007E7A60 /* ViewControllerFactory.swift */,
+				95814CCF23FD33EA00407E3C /* AppDelegate.swift */,
+				DF31AEEC2401B8E6000F3272 /* Appearance.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,10 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				95814CDC23FD33ED00407E3C /* LaunchScreen.storyboard in Resources */,
+				DF9B2024240BFE1B007E7A60 /* NewEventViewController.storyboard in Resources */,
+				DF9B2022240BFDD3007E7A60 /* EventsViewController.storyboard in Resources */,
 				95814CD923FD33ED00407E3C /* Assets.xcassets in Resources */,
 				95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */,
 				DF31AEEA23FE50FD000F3272 /* ProgressBarView.xib in Resources */,
-				95814CD723FD33EA00407E3C /* Main.storyboard in Resources */,
+				DF9B2020240BFC98007E7A60 /* ActiveEventViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,16 +302,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9B202F240EF2B4007E7A60 /* EventTableViewCell.swift in Sources */,
 				952D4C7123FE6E84004D4070 /* EventManager.swift in Sources */,
 				95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */,
 				952D4C6C23FD6A6C004D4070 /* TableViewWithoutScroll.swift in Sources */,
+				DF9B2026240BFF07007E7A60 /* ViewControllerFactory.swift in Sources */,
 				952D4C6E23FE5DBF004D4070 /* UIView+XIB.swift in Sources */,
 				952D4C7323FE6F33004D4070 /* Event.swift in Sources */,
-				95814CD423FD33EA00407E3C /* ViewController.swift in Sources */,
+				DF9B2028240BFFA5007E7A60 /* UIViewController+StoryboardInstance.swift in Sources */,
+				95814CD423FD33EA00407E3C /* ActiveEventViewController.swift in Sources */,
 				952D4C6A23FD45B6004D4070 /* BaseView.swift in Sources */,
+				DF00432F2402E5E2006D54AB /* NewEventViewController.swift in Sources */,
+				DF9B2014240BFA5C007E7A60 /* ScrollContentViewController.swift in Sources */,
+				DF31AEED2401B8E6000F3272 /* Appearance.swift in Sources */,
+				DF0043312402E946006D54AB /* UIColor+hex.swift in Sources */,
 				95814CD023FD33EA00407E3C /* AppDelegate.swift in Sources */,
+				DF31AEEF2401BE2F000F3272 /* EventsViewController.swift in Sources */,
+				DF9B202D240C1070007E7A60 /* UIColor+AppColors.swift in Sources */,
+				DF00432D2402E115006D54AB /* LabelWithInset.swift in Sources */,
+				DF9B2016240BFAB6007E7A60 /* TappableScrollView.swift in Sources */,
 				9521C2FD23FE794F00C92B4B /* Double+Round.swift in Sources */,
 				95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */,
+				DF9B202B240C0202007E7A60 /* TabbarViewControllerProtocol.swift in Sources */,
 				DF31AEEB23FE50FD000F3272 /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,14 +331,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		95814CD523FD33EA00407E3C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95814CD623FD33EA00407E3C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95814CDA23FD33ED00407E3C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,12 +463,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KD22UDLNC;
 				INFOPLIST_FILE = WaitFor/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbulat.WaitFor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azaza.vulala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,12 +482,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KD22UDLNC;
 				INFOPLIST_FILE = WaitFor/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mbulat.WaitFor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azaza.vulala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

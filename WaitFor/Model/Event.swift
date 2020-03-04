@@ -8,12 +8,16 @@
 
 import Foundation
 
-struct Event {
+struct Event: Codable {
+    let id: UUID
     let title: String
     let startDate: Date
     let endDate: Date
-
-    func durationInSeconds() -> Int {
-        return Calendar.current.dateComponents([.second], from: startDate, to: endDate).second ?? 0
+    
+    init(title: String, startDate: Date, endDate: Date) {
+        self.id = UUID()
+        self.title = title
+        self.startDate = startDate
+        self.endDate = endDate
     }
 }
