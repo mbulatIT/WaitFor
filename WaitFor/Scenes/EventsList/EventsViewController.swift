@@ -59,8 +59,7 @@ class EventsViewController: UIViewController {
     
     @objc
     func onPlusButton() {
-        let viewController = ViewControllerFactory.makeNewEventViewController()
-        navigationController?.pushViewController(viewController, animated: true)
+        showNewEventController()
     }
     
     private func showSelectAlert(event: Event) {
@@ -74,6 +73,11 @@ class EventsViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Нет", style: .cancel))
         present(alert, animated: true)
+    }
+    
+    private func showNewEventController(event: Event? = nil) {
+        let viewController = ViewControllerFactory.makeNewEventViewController(edit: event)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -107,7 +111,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        showSelectAlert(event: events[indexPath.row])
+        showNewEventController(event: events[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

@@ -24,6 +24,7 @@ class NewEventViewController: ScrollContentViewController {
     private let placeholderText = "Название.."
     private var isStartDateSelected = false
     private var isEndDateSelected = false
+    var event: Event?
     
     
     override var scrollView: TappableScrollView? {
@@ -32,28 +33,49 @@ class NewEventViewController: ScrollContentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        startDatePickerView.locale = Locale(identifier: "ru_RU")
+        endDatePickerView.locale = Locale(identifier: "ru_RU")
+        startDatePickerView.datePickerMode = .date
+        endDatePickerView.datePickerMode = .date
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         titleTextField.layer.borderWidth = 1
         titleTextField.layer.borderColor = UIColor(hex: 0xDADB3E, alpha: 0.7).cgColor
         titleTextField.delegate = self
         titleTextField.text = placeholderText
         endDatePickerView.minimumDate = startDatePickerView.date
-        navigationController?.title = "Новое событие"
+        navigationItem.title = event == nil ? "Новое событие" : "Редактор событий"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(onSaveEventButton(_:)))
+        navigationItem.rightBarButtonItem?.isEnabled = false
         activityIndicator.isHidden = true
+        
+        if let event = event {
+            titleTextField.addTarget(self, action: #selector(checkSaveButtonAvailability), for: .editingChanged)
+            titleTextField.text = event.title
+            startDatePickerView.date = event.startDate
+            endDatePickerView.date = event.endDate
+            startDateButton.setTitle("Начало: \(dateFormatter.string(from: startDatePickerView.date))", for: .normal)
+            endDateButton.setTitle("Конец: \(dateFormatter.string(from: endDatePickerView.date))", for: .normal)
+            isStartDateSelected = true
+            isEndDateSelected = false
+            titleTextField.textColor = .white
+        }
         // Do any additional setup after loading the view.
     }
 
     @IBAction func startDateChanged(_ sender: Any) {
         startDateButton.setTitle("Начало: \(dateFormatter.string(from: startDatePickerView.date))", for: .normal)
         endDatePickerView.minimumDate = startDatePickerView.date
-        endDateButton.setTitle("Конец: \(dateFormatter.string(from: startDatePickerView.date))", for: .normal)
+        endDateButton.setTitle("Конец: \(dateFormatter.string(from: endDatePickerView.date))", for: .normal)
+        checkSaveButtonAvailability()
     }
 
     @IBAction func endDateChanged(_ sender: Any) {
         endDateButton.setTitle("Конец: \(dateFormatter.string(from: endDatePickerView.date))", for: .normal)
+        checkSaveButtonAvailability()
     }
     
-    @IBAction func onSaveEventButton(_ sender: Any) {
+    @objc
+    func onSaveEventButton(_ sender: Any) {
         guard let title = titleTextField.text else {
             print("Title cannot be nil")
             return
@@ -72,13 +94,18 @@ class NewEventViewController: ScrollContentViewController {
             showErrorAlert(message: "Пожалуйста, введите название события")
             return
         }
-
-        let event = Event(title: title, startDate: startDatePickerView.date, endDate: endDatePickerView.date)
+        
+        var newEvent: Event
+        if let eventId = event?.id {
+            newEvent = Event(id: eventId,title: title, startDate: startDatePickerView.date, endDate: endDatePickerView.date)
+        } else {
+            newEvent = Event(title: title, startDate: startDatePickerView.date, endDate: endDatePickerView.date)
+        }
         DispatchQueue.main.async {
             self.activityIndicator.isHidden = false
             self.activityIndicator.startAnimating()
         }
-        EventManager.shared.addEvent(event) { (_) in
+        EventManager.shared.addEvent(newEvent) { (_) in
             DispatchQueue.main.async {
                 if let viewController = self.navigationController?.viewControllers.first(where: { $0 as? EventsViewController != nil }),
                     let eventsViewController = viewController as? EventsViewController {
@@ -114,11 +141,20 @@ class NewEventViewController: ScrollContentViewController {
         }
     }
     
-    func showErrorAlert(message: String) {
+    private func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Проблемка", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc
+    private func checkSaveButtonAvailability() {
+        if let event = event {
+            navigationItem.rightBarButtonItem?.isEnabled = ((event.startDate != startDatePickerView.date) || (event.endDate != endDatePickerView.date) || (event.title != titleTextField.text))
+        } else {
+            navigationItem.rightBarButtonItem?.isEnabled = isStartDateSelected && isEndDateSelected && titleTextField.text != placeholderText && titleTextField.text?.isEmpty == false
         }
     }
 }
@@ -127,12 +163,14 @@ extension NewEventViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == placeholderText {
             textField.text = ""
+            textField.textColor = .white
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == nil {
             textField.text = placeholderText
+            textField.textColor = .placeholder
         }
         textField.resignFirstResponder()
         return true
@@ -141,6 +179,7 @@ extension NewEventViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" || textField.text == nil {
             textField.text = placeholderText
+            textField.textColor = .placeholder
         }
     }
 }

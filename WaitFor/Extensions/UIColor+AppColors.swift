@@ -10,4 +10,5 @@ import UIKit
 
 extension UIColor {
     static let defaultYellow = UIColor(hex: 0xEBEA9D)
+    static let placeholder = UIColor(hex: 0xFFFFFF, alpha: 0.75)
 }

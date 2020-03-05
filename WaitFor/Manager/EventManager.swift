@@ -79,7 +79,13 @@ class EventManager {
     func addEvent(_ event: Event, completionHandler: @escaping ([Event])->()) {
         getEvents { (events) in
             var newEvents = events
+            if let oldEventIndex = events.firstIndex(where: {$0.id == event.id}) {
+                newEvents.remove(at: oldEventIndex)
+            }
             newEvents.append(event)
+            if newEvents.count == 1 {
+                self.setActiveEvent(event)
+            }
             completionHandler(newEvents)
             self.save(events: newEvents)
         }

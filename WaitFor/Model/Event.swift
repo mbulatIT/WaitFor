@@ -20,4 +20,11 @@ struct Event: Codable {
         self.startDate = startDate
         self.endDate = endDate
     }
+
+    init(id: UUID, title: String, startDate: Date, endDate: Date) {
+        self.id = id
+        self.title = title
+        self.startDate = startDate
+        self.endDate = endDate
+    }
 }

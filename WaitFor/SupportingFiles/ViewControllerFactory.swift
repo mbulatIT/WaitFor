@@ -25,10 +25,11 @@ class ViewControllerFactory {
         return viewController
     }
     
-    internal static func makeNewEventViewController() -> UIViewController {
+    internal static func makeNewEventViewController(edit: Event? = nil) -> UIViewController {
         guard let viewController = NewEventViewController.storyboardInstance() as? NewEventViewController else {
             fatalError("Cannot load view controller from storyboard")
         }
+        viewController.event = edit
         return viewController
     }
 }
