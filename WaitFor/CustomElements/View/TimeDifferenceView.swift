@@ -1,5 +1,5 @@
 //
-//  SpentTimeView.swift
+//  TimeDifferenceView.swift
 //  WaitFor
 //
 //  Created by Bulat, Maksim on 2/19/20.
@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SpentTimeView: BaseView {
+class TimeDifferenceView: BaseView {
+
+    enum DifferenceType {
+        case left
+        case spent
+    }
 
     enum DisplayType {
         case day
@@ -31,6 +36,8 @@ class SpentTimeView: BaseView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: TableViewWithoutScroll!
     @IBOutlet var view: UIView!
+    
+    var differenceType = DifferenceType.left
 
     var displayType: DisplayType = .day {
         didSet {
@@ -58,24 +65,60 @@ class SpentTimeView: BaseView {
         let currentDate = Date()
         switch requiredComponent {
         case .day:
-            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0)
+            let timeDifference = NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         case .weekday:
-            return abs(Int((NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0) / 7))
+            let timeDifference = Int((NSCalendar.current.dateComponents(components, from: date, to: currentDate).day ?? 0) / 7)
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         case .month:
-            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).month ?? 0)
+            let timeDifference = NSCalendar.current.dateComponents(components, from: date, to: currentDate).month ?? 0
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         case .hour:
-            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).hour ?? 0)
+            let timeDifference = NSCalendar.current.dateComponents(components, from: date, to: currentDate).hour ?? 0
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         case.minute:
-            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).minute ?? 0)
+            let timeDifference = NSCalendar.current.dateComponents(components, from: date, to: currentDate).minute ?? 0
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         case .second:
-            return abs(NSCalendar.current.dateComponents(components, from: date, to: currentDate).second ?? 0)
+            let timeDifference = NSCalendar.current.dateComponents(components, from: date, to: currentDate).second ?? 0
+            switch differenceType {
+            case .left:
+                return timeDifference > 0 ? 0 : -timeDifference
+            case .spent:
+                return timeDifference > 0 ? timeDifference : 0
+            }
         default:
             return 0
         }
     }
 
     override func setup() {
-        UINib(nibName: "SpentTimeView", bundle: nil).instantiate(withOwner: self, options: nil)
+        UINib(nibName: "TimeDifferenceView", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(view)
         clipViewToBounds(view: view)
         tableView.delegate = self
@@ -89,7 +132,7 @@ class SpentTimeView: BaseView {
     }
 }
 
-extension SpentTimeView: UITableViewDelegate, UITableViewDataSource {
+extension TimeDifferenceView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayType.cellsCount()
     }
@@ -175,7 +218,7 @@ extension SpentTimeView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-private extension SpentTimeView {
+private extension TimeDifferenceView {
     func formatedTimeWord(value: Int, component: Calendar.Component) -> String {
         switch value % 10 {
         case 0, 5, 6, 7, 8, 9:

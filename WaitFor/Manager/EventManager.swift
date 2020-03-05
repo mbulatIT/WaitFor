@@ -42,7 +42,12 @@ class EventManager {
                 if let event = events.first(where: {$0.id == activeEventId}) {
                     completion(event)
                 } else {
-                    completion(nil)
+                    if let newActiveEvent = events.first {
+                        self.setActiveEvent(newActiveEvent)
+                        completion(newActiveEvent)
+                    } else {
+                        completion(nil)
+                    }
                 }
             }
         } else {

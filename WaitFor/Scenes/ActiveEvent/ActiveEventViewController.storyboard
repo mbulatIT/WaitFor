@@ -15,82 +15,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="3eL-Pw-jjd">
-                                <rect key="frame" x="10" y="353.5" width="394" height="199"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCS-VD-T9n">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-4L-m1m" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="177" height="128"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRn-cZ-0vg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="479"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkv-Cg-eAN" customClass="ProgressBarView" customModule="WaitFor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="20" width="374" height="88"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="vh4-NF-XpO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="3eL-Pw-jjd">
+                                                <rect key="frame" x="20" y="128" width="374" height="199"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-4L-m1m" customClass="TimeDifferenceView" customModule="WaitFor" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="20" width="167" height="128"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="s33-VK-WNp"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="kz0-Mg-9g0" customClass="TimeDifferenceView" customModule="WaitFor" customModuleProvider="target">
+                                                        <rect key="frame" x="187" y="20" width="167" height="128"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="f2d-yR-Qj7"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M28-LH-mvD">
+                                                        <rect key="frame" x="10" y="158" width="354" height="32"/>
+                                                        <segments>
+                                                            <segment title="Д"/>
+                                                            <segment title="МД"/>
+                                                            <segment title="МНД"/>
+                                                            <segment title="НД"/>
+                                                        </segments>
+                                                        <color key="selectedSegmentTintColor" red="0.43529411759999997" green="0.45882352939999999" blue="0.070588235289999995" alpha="0.18450154050000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="onSegmentedControlValueChanged:" destination="2ED-9P-Q4f" eventType="valueChanged" id="fcH-ut-YZU"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.85490196080000003" green="0.85882352939999995" blue="0.24313725489999999" alpha="0.18499669887605633" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="leading" secondItem="FGI-4L-m1m" secondAttribute="trailing" id="3K5-SJ-pHh"/>
+                                                    <constraint firstItem="FGI-4L-m1m" firstAttribute="leading" secondItem="3eL-Pw-jjd" secondAttribute="leading" constant="20" symbolic="YES" id="63E-fD-g3C"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kz0-Mg-9g0" secondAttribute="trailing" constant="20" symbolic="YES" id="CsF-al-gk4"/>
+                                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="top" secondItem="3eL-Pw-jjd" secondAttribute="top" constant="20" symbolic="YES" id="HyU-0l-PNP"/>
+                                                    <constraint firstItem="FGI-4L-m1m" firstAttribute="top" secondItem="3eL-Pw-jjd" secondAttribute="top" constant="20" symbolic="YES" id="JZ9-rF-ZdW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="M28-LH-mvD" secondAttribute="trailing" constant="10" id="Q3L-mX-dtw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="M28-LH-mvD" secondAttribute="bottom" constant="10" id="eia-f0-6Kn"/>
+                                                    <constraint firstItem="M28-LH-mvD" firstAttribute="top" secondItem="kz0-Mg-9g0" secondAttribute="bottom" constant="10" id="oTa-3n-L1r"/>
+                                                    <constraint firstItem="M28-LH-mvD" firstAttribute="leading" secondItem="3eL-Pw-jjd" secondAttribute="leading" constant="10" id="tyY-dE-fal"/>
+                                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="width" secondItem="FGI-4L-m1m" secondAttribute="width" id="uAL-A9-ziq"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5l-e7-fQD">
+                                                <rect key="frame" x="20" y="347" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-Fv-QYy">
+                                                <rect key="frame" x="20" y="391" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-2m-sjX">
+                                                <rect key="frame" x="20" y="435" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="s33-VK-WNp"/>
+                                            <constraint firstAttribute="trailing" secondItem="3eL-Pw-jjd" secondAttribute="trailing" constant="20" id="5SL-rc-kIZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="L5l-e7-fQD" secondAttribute="trailing" constant="20" id="6Qz-Nv-8tm"/>
+                                            <constraint firstItem="3eL-Pw-jjd" firstAttribute="top" secondItem="Wkv-Cg-eAN" secondAttribute="bottom" constant="20" id="B5n-gc-vdB"/>
+                                            <constraint firstItem="L5l-e7-fQD" firstAttribute="leading" secondItem="eRn-cZ-0vg" secondAttribute="leading" constant="20" id="BOC-4G-v62"/>
+                                            <constraint firstItem="I9k-Fv-QYy" firstAttribute="leading" secondItem="eRn-cZ-0vg" secondAttribute="leading" constant="20" id="Csp-8j-ih1"/>
+                                            <constraint firstItem="zX8-2m-sjX" firstAttribute="top" secondItem="I9k-Fv-QYy" secondAttribute="bottom" constant="20" id="K19-Sf-M6N"/>
+                                            <constraint firstAttribute="trailing" secondItem="zX8-2m-sjX" secondAttribute="trailing" constant="20" id="P4K-HV-uwf"/>
+                                            <constraint firstAttribute="trailing" secondItem="I9k-Fv-QYy" secondAttribute="trailing" constant="20" id="Tf3-dI-d4Z"/>
+                                            <constraint firstItem="zX8-2m-sjX" firstAttribute="leading" secondItem="eRn-cZ-0vg" secondAttribute="leading" constant="20" id="cUB-Il-sq8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wkv-Cg-eAN" secondAttribute="trailing" constant="20" id="flP-Vr-cPJ"/>
+                                            <constraint firstItem="3eL-Pw-jjd" firstAttribute="leading" secondItem="eRn-cZ-0vg" secondAttribute="leading" constant="20" id="heB-QF-eil"/>
+                                            <constraint firstItem="L5l-e7-fQD" firstAttribute="top" secondItem="3eL-Pw-jjd" secondAttribute="bottom" constant="20" id="hzX-cg-gYL"/>
+                                            <constraint firstItem="Wkv-Cg-eAN" firstAttribute="top" secondItem="eRn-cZ-0vg" secondAttribute="top" constant="20" id="oKG-P0-Hm9"/>
+                                            <constraint firstItem="I9k-Fv-QYy" firstAttribute="top" secondItem="L5l-e7-fQD" secondAttribute="bottom" constant="20" id="sfl-KX-vX9"/>
+                                            <constraint firstItem="Wkv-Cg-eAN" firstAttribute="leading" secondItem="eRn-cZ-0vg" secondAttribute="leading" constant="20" id="udU-C3-OUS"/>
+                                            <constraint firstAttribute="bottom" secondItem="zX8-2m-sjX" secondAttribute="bottom" constant="20" id="z5i-a5-H13"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="kz0-Mg-9g0" customClass="SpentTimeView" customModule="WaitFor" customModuleProvider="target">
-                                        <rect key="frame" x="197" y="20" width="177" height="128"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="200" constant="128" placeholder="YES" id="f2d-yR-Qj7"/>
-                                        </constraints>
-                                    </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M28-LH-mvD">
-                                        <rect key="frame" x="10" y="158" width="374" height="32"/>
-                                        <segments>
-                                            <segment title="Д"/>
-                                            <segment title="МД"/>
-                                            <segment title="МНД"/>
-                                            <segment title="НД"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" red="0.43529411759999997" green="0.45882352939999999" blue="0.070588235289999995" alpha="0.18450154050000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="onSegmentedControlValueChanged:" destination="2ED-9P-Q4f" eventType="valueChanged" id="fcH-ut-YZU"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.85490196080000003" green="0.85882352939999995" blue="0.24313725489999999" alpha="0.18499669887605633" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="leading" secondItem="FGI-4L-m1m" secondAttribute="trailing" id="3K5-SJ-pHh"/>
-                                    <constraint firstItem="FGI-4L-m1m" firstAttribute="leading" secondItem="3eL-Pw-jjd" secondAttribute="leading" constant="20" symbolic="YES" id="63E-fD-g3C"/>
-                                    <constraint firstAttribute="trailing" secondItem="kz0-Mg-9g0" secondAttribute="trailing" constant="20" symbolic="YES" id="CsF-al-gk4"/>
-                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="top" secondItem="3eL-Pw-jjd" secondAttribute="top" constant="20" symbolic="YES" id="HyU-0l-PNP"/>
-                                    <constraint firstItem="FGI-4L-m1m" firstAttribute="top" secondItem="3eL-Pw-jjd" secondAttribute="top" constant="20" symbolic="YES" id="JZ9-rF-ZdW"/>
-                                    <constraint firstAttribute="trailing" secondItem="M28-LH-mvD" secondAttribute="trailing" constant="10" id="Q3L-mX-dtw"/>
-                                    <constraint firstAttribute="bottom" secondItem="M28-LH-mvD" secondAttribute="bottom" constant="10" id="eia-f0-6Kn"/>
-                                    <constraint firstItem="M28-LH-mvD" firstAttribute="top" secondItem="kz0-Mg-9g0" secondAttribute="bottom" constant="10" id="oTa-3n-L1r"/>
-                                    <constraint firstItem="M28-LH-mvD" firstAttribute="leading" secondItem="3eL-Pw-jjd" secondAttribute="leading" constant="10" id="tyY-dE-fal"/>
-                                    <constraint firstItem="kz0-Mg-9g0" firstAttribute="width" secondItem="FGI-4L-m1m" secondAttribute="width" id="uAL-A9-ziq"/>
+                                    <constraint firstItem="eRn-cZ-0vg" firstAttribute="top" secondItem="UCS-VD-T9n" secondAttribute="top" id="KVs-Fa-npm"/>
+                                    <constraint firstAttribute="bottom" secondItem="eRn-cZ-0vg" secondAttribute="bottom" id="iL4-f9-o3g"/>
+                                    <constraint firstItem="eRn-cZ-0vg" firstAttribute="leading" secondItem="UCS-VD-T9n" secondAttribute="leading" id="kUH-q5-wdy"/>
+                                    <constraint firstAttribute="trailing" secondItem="eRn-cZ-0vg" secondAttribute="trailing" id="uoI-Jf-BwU"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkv-Cg-eAN" customClass="ProgressBarView" customModule="WaitFor" customModuleProvider="target">
-                                <rect key="frame" x="10" y="64" width="394" height="88"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="vh4-NF-XpO"/>
-                                </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.70588235294117641" green="0.70196078431372544" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="l2L-3B-P7E" firstAttribute="trailing" secondItem="Wkv-Cg-eAN" secondAttribute="trailing" constant="10" id="Agk-rb-lmF"/>
-                            <constraint firstItem="Wkv-Cg-eAN" firstAttribute="top" secondItem="l2L-3B-P7E" secondAttribute="top" constant="20" id="QQo-UF-wNN"/>
-                            <constraint firstItem="Wkv-Cg-eAN" firstAttribute="leading" secondItem="l2L-3B-P7E" secondAttribute="leading" constant="10" id="Ysb-jy-hry"/>
-                            <constraint firstItem="3eL-Pw-jjd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wkv-Cg-eAN" secondAttribute="bottom" constant="20" id="i4K-Ea-uBe"/>
-                            <constraint firstItem="3eL-Pw-jjd" firstAttribute="centerY" secondItem="l2L-3B-P7E" secondAttribute="centerY" priority="999" id="qOL-9C-W72"/>
-                            <constraint firstItem="l2L-3B-P7E" firstAttribute="trailing" secondItem="3eL-Pw-jjd" secondAttribute="trailing" constant="10" id="vMu-mj-F8z"/>
-                            <constraint firstItem="3eL-Pw-jjd" firstAttribute="leading" secondItem="l2L-3B-P7E" secondAttribute="leading" constant="10" id="xlA-hM-rEx"/>
+                            <constraint firstItem="UCS-VD-T9n" firstAttribute="leading" secondItem="l2L-3B-P7E" secondAttribute="leading" id="AJn-xX-TGC"/>
+                            <constraint firstItem="l2L-3B-P7E" firstAttribute="trailing" secondItem="UCS-VD-T9n" secondAttribute="trailing" id="aHk-JZ-nbN"/>
+                            <constraint firstItem="l2L-3B-P7E" firstAttribute="bottom" secondItem="UCS-VD-T9n" secondAttribute="bottom" id="b03-82-9mz"/>
+                            <constraint firstItem="UCS-VD-T9n" firstAttribute="top" secondItem="l2L-3B-P7E" secondAttribute="top" id="o8L-my-uLf"/>
+                            <constraint firstItem="eRn-cZ-0vg" firstAttribute="width" secondItem="l2L-3B-P7E" secondAttribute="width" id="whU-qO-7I8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l2L-3B-P7E"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="clock" catalog="system" id="pcL-Ez-gnC"/>
                     <navigationItem key="navigationItem" id="hC6-oc-HSu"/>
                     <connections>
+                        <outlet property="currentDateLabel" destination="zX8-2m-sjX" id="7Sa-x9-FIe"/>
+                        <outlet property="endDateLabel" destination="I9k-Fv-QYy" id="0aJ-B8-1L2"/>
                         <outlet property="progressBar" destination="Wkv-Cg-eAN" id="5eu-Sn-CA9"/>
                         <outlet property="segmentedControl" destination="M28-LH-mvD" id="mSn-Zy-lHs"/>
+                        <outlet property="startDateLabel" destination="L5l-e7-fQD" id="ubs-FY-Qb0"/>
                         <outlet property="timeLeftView" destination="FGI-4L-m1m" id="jjM-em-Bjp"/>
                         <outlet property="timeSpentView" destination="kz0-Mg-9g0" id="YiC-5O-w2D"/>
                     </connections>

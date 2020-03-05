@@ -17,8 +17,8 @@
 		95814CD423FD33EA00407E3C /* ActiveEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CD323FD33EA00407E3C /* ActiveEventViewController.swift */; };
 		95814CD923FD33ED00407E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95814CD823FD33ED00407E3C /* Assets.xcassets */; };
 		95814CDC23FD33ED00407E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95814CDA23FD33ED00407E3C /* LaunchScreen.storyboard */; };
-		95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CE523FD3A4F00407E3C /* SpentTimeView.swift */; };
-		95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95814CE823FD3FBE00407E3C /* SpentTimeView.xib */; };
+		95814CE623FD3A4F00407E3C /* TimeDifferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CE523FD3A4F00407E3C /* TimeDifferenceView.swift */; };
+		95814CE923FD3FBE00407E3C /* TimeDifferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95814CE823FD3FBE00407E3C /* TimeDifferenceView.xib */; };
 		95B524222411037A00C09A6C /* SelectActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B524212411037A00C09A6C /* SelectActiveViewController.swift */; };
 		95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F47BC623FD4240000744D3 /* UIView+Nib.swift */; };
 		DF00432D2402E115006D54AB /* LabelWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00432C2402E115006D54AB /* LabelWithInset.swift */; };
@@ -53,8 +53,8 @@
 		95814CD823FD33ED00407E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95814CDB23FD33ED00407E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95814CDD23FD33ED00407E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95814CE523FD3A4F00407E3C /* SpentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpentTimeView.swift; sourceTree = "<group>"; };
-		95814CE823FD3FBE00407E3C /* SpentTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpentTimeView.xib; sourceTree = "<group>"; };
+		95814CE523FD3A4F00407E3C /* TimeDifferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDifferenceView.swift; sourceTree = "<group>"; };
+		95814CE823FD3FBE00407E3C /* TimeDifferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeDifferenceView.xib; sourceTree = "<group>"; };
 		95B524212411037A00C09A6C /* SelectActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActiveViewController.swift; sourceTree = "<group>"; };
 		95F47BC623FD4240000744D3 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		DF00432C2402E115006D54AB /* LabelWithInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithInset.swift; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 				952D4C6923FD45B6004D4070 /* BaseView.swift */,
 				DF00432C2402E115006D54AB /* LabelWithInset.swift */,
 				952D4C6B23FD6A6C004D4070 /* TableViewWithoutScroll.swift */,
-				95814CE823FD3FBE00407E3C /* SpentTimeView.xib */,
-				95814CE523FD3A4F00407E3C /* SpentTimeView.swift */,
+				95814CE823FD3FBE00407E3C /* TimeDifferenceView.xib */,
+				95814CE523FD3A4F00407E3C /* TimeDifferenceView.swift */,
 				DF9B2015240BFAB6007E7A60 /* TappableScrollView.swift */,
 			);
 			path = View;
@@ -292,7 +292,7 @@
 				DF9B2024240BFE1B007E7A60 /* NewEventViewController.storyboard in Resources */,
 				DF9B2022240BFDD3007E7A60 /* EventsViewController.storyboard in Resources */,
 				95814CD923FD33ED00407E3C /* Assets.xcassets in Resources */,
-				95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */,
+				95814CE923FD3FBE00407E3C /* TimeDifferenceView.xib in Resources */,
 				DF31AEEA23FE50FD000F3272 /* ProgressBarView.xib in Resources */,
 				DF9B2020240BFC98007E7A60 /* ActiveEventViewController.storyboard in Resources */,
 			);
@@ -326,7 +326,7 @@
 				DF00432D2402E115006D54AB /* LabelWithInset.swift in Sources */,
 				DF9B2016240BFAB6007E7A60 /* TappableScrollView.swift in Sources */,
 				9521C2FD23FE794F00C92B4B /* Double+Round.swift in Sources */,
-				95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */,
+				95814CE623FD3A4F00407E3C /* TimeDifferenceView.swift in Sources */,
 				DF9B202B240C0202007E7A60 /* TabbarViewControllerProtocol.swift in Sources */,
 				DF31AEEB23FE50FD000F3272 /* ProgressBarView.swift in Sources */,
 			);

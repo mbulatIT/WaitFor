@@ -39,7 +39,7 @@ class ProgressBarView: BaseView {
             progress = value
         }
         DispatchQueue.main.async {
-            self.progressLabel.text = "\((value * 100).rounded(toPlaces: 6)) %"
+            self.progressLabel.text = "\((self.progress * 100).rounded(toPlaces: 6)) %"
         }
         if Int(progressOldValue * Double(strokesCount)) != Int(progress * Double(strokesCount)) {
             DispatchQueue.main.async {

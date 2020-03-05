@@ -12,8 +12,7 @@ class EventsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noEventsLabel: UILabel!
-    
-    var needsUpdate = false
+
     var events = [Event]() {
         didSet {
             DispatchQueue.main.async {
@@ -34,10 +33,7 @@ class EventsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if needsUpdate {
-            reloadData()
-            needsUpdate = false
-        }
+        reloadData()
     }
     
     func reloadData() {
@@ -60,19 +56,6 @@ class EventsViewController: UIViewController {
     @objc
     func onPlusButton() {
         showNewEventController()
-    }
-    
-    private func showSelectAlert(event: Event) {
-        let alert = UIAlertController(title: event.title, message: "Сделать событие активным?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { (_) in
-            EventManager.shared.setActiveEvent(event)
-            self.needsUpdate = true
-            DispatchQueue.main.async {
-                self.tabBarController?.selectedIndex = 0
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Нет", style: .cancel))
-        present(alert, animated: true)
     }
     
     private func showNewEventController(event: Event? = nil) {

@@ -107,10 +107,6 @@ class NewEventViewController: ScrollContentViewController {
         }
         EventManager.shared.addEvent(newEvent) { (_) in
             DispatchQueue.main.async {
-                if let viewController = self.navigationController?.viewControllers.first(where: { $0 as? EventsViewController != nil }),
-                    let eventsViewController = viewController as? EventsViewController {
-                    eventsViewController.needsUpdate = true
-                }
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
                 self.navigationController?.popViewController(animated: true)

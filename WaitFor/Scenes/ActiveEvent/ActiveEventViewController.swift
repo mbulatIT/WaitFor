@@ -10,12 +10,16 @@ import UIKit
 
 class ActiveEventViewController: UIViewController {
 
-    @IBOutlet weak var timeLeftView: SpentTimeView!
-    @IBOutlet weak var timeSpentView: SpentTimeView!
+    @IBOutlet weak var timeLeftView: TimeDifferenceView!
+    @IBOutlet weak var timeSpentView: TimeDifferenceView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var progressBar: ProgressBarView!
+    @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var currentDateLabel: UILabel!
     private var navigationTitleButton = UIButton()
     private var selectActiveViewController: SelectActiveViewController?
+    private let dateFormatter = DateFormatter()
     
     var event: Event?
 
@@ -23,11 +27,17 @@ class ActiveEventViewController: UIViewController {
         super.viewDidLoad()
         timeLeftView.title = "Осталось"
         timeSpentView.title = "Прошло"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        timeLeftView.differenceType = .left
+        timeSpentView.differenceType = .spent
         tabBarController?.tabBar.clipsToBounds = true
         navigationItem.titleView = navigationTitleButton
         navigationTitleButton.tintColor = .white
         navigationTitleButton.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         navigationTitleButton.addTarget(self, action: #selector(showSelectEventViewController), for: .touchUpInside)
+        startDateLabel.text = "Начало"
+        endDateLabel.text = "Конец"
+        currentDateLabel.text = "Сегодня"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +70,9 @@ class ActiveEventViewController: UIViewController {
                 
                 self.segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
                 self.segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+                self.startDateLabel.text = "Начало: \(self.dateFormatter.string(from: event.startDate))"
+                self.endDateLabel.text = "Конец: \(self.dateFormatter.string(from: event.endDate))"
+                self.currentDateLabel.text = "Сегодня: \(self.dateFormatter.string(from: Date()))"
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
                     self.progressBar.setProgress(self.calculateProgress())
                 }
