@@ -92,8 +92,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let event = events[indexPath.row]
         cell.titleLabel.text = event.title
-        cell.titleLabel.font = UIFont.systemFont(ofSize: 15)
-        cell.titleLabel.font = event.id == activeEvent?.id ? UIFont.boldSystemFont(ofSize: 18) : UIFont.systemFont(ofSize: 15)
+        cell.titleLabel.font = event.id == activeEvent?.id ? UIFont.boldSystemFont(ofSize: 18) : UIFont.systemFont(ofSize: 18)
         cell.activeImageView.image = event.id == activeEvent?.id ? UIImage(systemName: "clock") : nil
         cell.backgroundColor = .clear
         cell.selectionStyle = .gray

@@ -19,6 +19,7 @@
 		95814CDC23FD33ED00407E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95814CDA23FD33ED00407E3C /* LaunchScreen.storyboard */; };
 		95814CE623FD3A4F00407E3C /* SpentTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95814CE523FD3A4F00407E3C /* SpentTimeView.swift */; };
 		95814CE923FD3FBE00407E3C /* SpentTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95814CE823FD3FBE00407E3C /* SpentTimeView.xib */; };
+		95B524222411037A00C09A6C /* SelectActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B524212411037A00C09A6C /* SelectActiveViewController.swift */; };
 		95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F47BC623FD4240000744D3 /* UIView+Nib.swift */; };
 		DF00432D2402E115006D54AB /* LabelWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00432C2402E115006D54AB /* LabelWithInset.swift */; };
 		DF00432F2402E5E2006D54AB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00432E2402E5E2006D54AB /* NewEventViewController.swift */; };
@@ -54,6 +55,7 @@
 		95814CDD23FD33ED00407E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95814CE523FD3A4F00407E3C /* SpentTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpentTimeView.swift; sourceTree = "<group>"; };
 		95814CE823FD3FBE00407E3C /* SpentTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpentTimeView.xib; sourceTree = "<group>"; };
+		95B524212411037A00C09A6C /* SelectActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActiveViewController.swift; sourceTree = "<group>"; };
 		95F47BC623FD4240000744D3 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		DF00432C2402E115006D54AB /* LabelWithInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithInset.swift; sourceTree = "<group>"; };
 		DF00432E2402E5E2006D54AB /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				95814CD323FD33EA00407E3C /* ActiveEventViewController.swift */,
+				95B524212411037A00C09A6C /* SelectActiveViewController.swift */,
 				DF9B201F240BFC98007E7A60 /* ActiveEventViewController.storyboard */,
 			);
 			path = ActiveEvent;
@@ -306,6 +309,7 @@
 				952D4C7123FE6E84004D4070 /* EventManager.swift in Sources */,
 				95F47BC723FD4240000744D3 /* UIView+Nib.swift in Sources */,
 				952D4C6C23FD6A6C004D4070 /* TableViewWithoutScroll.swift in Sources */,
+				95B524222411037A00C09A6C /* SelectActiveViewController.swift in Sources */,
 				DF9B2026240BFF07007E7A60 /* ViewControllerFactory.swift in Sources */,
 				952D4C6E23FE5DBF004D4070 /* UIView+XIB.swift in Sources */,
 				952D4C7323FE6F33004D4070 /* Event.swift in Sources */,
